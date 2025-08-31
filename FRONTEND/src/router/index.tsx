@@ -8,7 +8,7 @@ const MainRouter = () => {
   return (
     <div>
       <Routes>
-        <Route path="/login" Component={Login} />
+        <Route path="/login" element={<Login />} />
         <Route path="/user-registration" Component={NewUser} />
         <Route path="/comp-registration" Component={CompanyRegistration} />
       </Routes>
