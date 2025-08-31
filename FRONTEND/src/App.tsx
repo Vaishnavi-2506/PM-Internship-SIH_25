@@ -8,7 +8,7 @@ import Login from "./login/already/login";
 function App() {
   return (
     <div>
-      {/* <HeaderBar /> */}
+      <HeaderBar />
       <MainRouter />
     </div>
   );
