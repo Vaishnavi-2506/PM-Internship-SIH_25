@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import HeaderBar from "./common/header";
 import MainRouter from "./router";
