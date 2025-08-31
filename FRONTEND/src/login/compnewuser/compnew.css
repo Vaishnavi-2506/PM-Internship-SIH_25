@@ -1,0 +1,113 @@
+.form-box {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px 30px;
+    border-radius: 12px;
+    background: #f8faff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #222;
+}
+
+.section-title {
+    color: #ff6600;
+    margin: 20px 0 10px;
+    font-size: 18px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px 20px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-field label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #222;
+}
+
+.form-field input,
+.form-field textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 60px;
+}
+
+.wide {
+    margin-top: 10px;
+}
+
+.email-row {
+    display: grid;
+    grid-template-columns: 2fr auto 1fr auto;
+    gap: 8px;
+    align-items: center;
+}
+
+.otp-btn,
+.verify-btn {
+    padding: 6px 12px;
+    border: 1px solid #007bff;
+    background: white;
+    color: #007bff;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.otp-btn:hover,
+.verify-btn:hover {
+    background: #007bff;
+    color: white;
+}
+
+.btn-row {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.submit-btn {
+    padding: 10px 20px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background: #218838;
+}
+
+.reset-btn {
+    padding: 10px 20px;
+    background: white;
+    border: 1px solid #007bff;
+    color: #007bff;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.reset-btn:hover {
+    background: #007bff;
+    color: white;
+}

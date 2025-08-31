@@ -1,0 +1,76 @@
+*{
+    font-family: sans-serif;
+    color: black;
+}
+.login-container {
+    width: 300px;
+    min-height: 400px;
+    /* flexible but keeps old look */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* centers all inside */
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border-radius: 20px;
+    background: linear-gradient(to right, #ff512f, #f0ba19);
+    border: 1px solid black;
+}
+.container {
+    background-color: #FFE8C5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    background-image: url('./bg2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+input:focus {
+    outline: none;
+    border: 1px solid #ff512f;
+    box-shadow: 0 0 5px rgba(255, 81, 47, 0.6);
+}
+input{
+    background-color: white;
+    border: 0;
+    color: black;
+    width: 200px;
+    height: 25px;
+    border-radius: 05px;
+    padding: 5px;
+}
+.login-button {
+    background: #fff;
+    color: black;
+    border-radius: 10px;
+    padding: 8px 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.login-button:hover {
+    background: #ff512f;
+    color: white;
+}
+.options-container {
+    display: flex;
+    justify-content: space-between;
+    /* puts them at far left & right inside container */
+    width: 100%;
+    /* take full width of login-container */
+    margin-top: 10px;
+    /* optional spacing */
+}
+a{
+    color: black;
+    font-size: 14px;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+    color: #ffffff;
+}

@@ -1,0 +1,212 @@
+:root {
+    --saffron: #ff9933;
+    /* Top - Saffron */
+    --white: #ffffff;
+    /* Middle - White */
+    --green: #138808;
+    /* Bottom - Green */
+    --blue: #000080;
+    /* Chakra Blue */
+    --bg-light: #f4f6fa;
+    /* Light form background */
+    --danger: #ff4d4d;
+    /* Error red */
+    --muted: #777777;
+    --shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* RESET */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(to bottom,
+            var(--saffron) 0%,
+            var(--white) 50%,
+            var(--green) 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+/* WRAPPER */
+.nu-wrapper {
+    min-height: 100vh;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* HEADER */
+.nu-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.nu-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--blue);
+}
+
+.nu-lang {
+    font-size: 14px;
+    color: var(--muted);
+}
+
+/* FORM */
+.nu-form {
+    background: var(--bg-light);
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+    max-width: 900px;
+    width: 100%;
+}
+
+/* SECTION TITLES */
+.nu-section-title {
+    margin: 20px 0 12px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--saffron);
+    border-left: 4px solid var(--green);
+    padding-left: 8px;
+}
+
+/* GRID */
+.nu-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+@media (max-width: 960px) {
+    .nu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 560px) {
+    .nu-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.nu-col.span-1 {
+    grid-column: span 1;
+}
+
+.nu-col.span-2 {
+    grid-column: span 2;
+}
+
+.nu-col.span-3 {
+    grid-column: span 3;
+}
+
+.nu-col.span-4 {
+    grid-column: span 4;
+}
+
+/* FIELD */
+.nu-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.nu-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--blue);
+}
+
+.nu-required {
+    color: var(--danger);
+    margin-left: 4px;
+}
+
+.nu-field input,
+.nu-field textarea,
+.nu-field select {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 14px;
+    background: #fff;
+    transition: border-color 0.2s ease;
+}
+
+.nu-field input:focus,
+.nu-field textarea:focus,
+.nu-field select:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 2px rgba(19, 136, 8, 0.2);
+}
+
+.nu-error {
+    font-size: 12px;
+    color: var(--danger);
+}
+
+/* INLINE FIELD */
+.nu-inline {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* BUTTONS */
+.nu-btn {
+    border: none;
+    border-radius: 6px;
+    padding: 10px 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.nu-btn.primary {
+    background: var(--green);
+    color: var(--white);
+}
+
+.nu-btn.primary:hover {
+    background: #0f6d06;
+    transform: translateY(-1px);
+}
+
+.nu-btn.secondary {
+    background: var(--saffron);
+    color: var(--white);
+}
+
+.nu-btn.secondary:hover {
+    background: #e67e22;
+    transform: translateY(-1px);
+}
+
+.nu-btn.ghost {
+    background: transparent;
+    border: 1px solid var(--blue);
+    color: var(--blue);
+}
+
+.nu-btn.ghost:hover {
+    background: var(--blue);
+    color: var(--white);
+}
+
+/* ACTIONS */
+.nu-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 20px;
+}
