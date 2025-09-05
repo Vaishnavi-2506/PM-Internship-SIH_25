@@ -1,76 +1,137 @@
-*{
-    font-family: sans-serif;
-    color: black;
-}
-.login-container {
-    width: 300px;
-    min-height: 400px;
-    /* flexible but keeps old look */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* centers all inside */
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    border-radius: 20px;
-    background: linear-gradient(to right, #ff512f, #f0ba19);
-    border: 1px solid black;
-}
+/* Full page container with background image */
 .container {
-    background-color: #FFE8C5;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-
-    background-image: url('./bg2.png');
+    min-height: 100vh;
+    background: url("bg2.png") no-repeat center center fixed;
     background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
 }
-input:focus {
-    outline: none;
-    border: 1px solid #ff512f;
-    box-shadow: 0 0 5px rgba(255, 81, 47, 0.6);
+
+/* Overlay to improve readability */
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(20, 20, 20,);
+    /* dark overlay */
+    z-index: 1;
 }
-input{
-    background-color: white;
-    border: 0;
-    color: black;
-    width: 200px;
-    height: 25px;
-    border-radius: 05px;
-    padding: 5px;
+
+/* Login box */
+.login-container {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px 30px;
+    border-radius: 16px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+    width: 350px;
+    text-align: center;
+    animation: fadeIn 0.6s ease-in-out;
+    backdrop-filter: blur(6px);
 }
-.login-button {
-    background: #fff;
-    color: black;
-    border-radius: 10px;
-    padding: 8px 16px;
+
+.login-container h1 {
+    margin-bottom: 20px;
+    font-size: 26px;
     font-weight: bold;
-    cursor: pointer;
-    transition: 0.2s;
+    color: #2c3e50;
+    /* dark blue shade from bg2.png */
 }
-.login-button:hover {
-    background: #ff512f;
+
+.login-container h4 {
+    text-align: left;
+    margin: 15px 0 5px;
+    font-size: 14px;
+    color: #34495e;
+    /* darker grey-blue */
+}
+
+/* Input fields */
+.login-container input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    margin-bottom: 10px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background: #fdfdfd;
+}
+
+.login-container input:focus {
+    border-color: #6a5acd;
+    /* purple accent from bg2.png */
+    box-shadow: 0px 0px 6px rgba(106, 90, 205, 0.6);
+}
+
+/* Button */
+.login-button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #6a5acd, #1e90ff);
+    /* purple to blue gradient */
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
     color: white;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
+
+.login-button:hover {
+    background: linear-gradient(135deg, #1e90ff, #6a5acd);
+    transform: scale(1.02);
+}
+
+.login-button:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+
+/* Links below form */
 .options-container {
+    margin-top: 20px;
     display: flex;
     justify-content: space-between;
-    /* puts them at far left & right inside container */
-    width: 100%;
-    /* take full width of login-container */
-    margin-top: 10px;
-    /* optional spacing */
 }
-a{
-    color: black;
-    font-size: 14px;
+
+.options-container a {
     text-decoration: none;
+    font-size: 14px;
+    color: #1e90ff;
+    transition: color 0.3s ease;
 }
-a:hover {
-    text-decoration: underline;
-    color: #ffffff;
+
+.options-container a:hover {
+    color: #6a5acd;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .login-container {
+        width: 90%;
+        padding: 30px 20px;
+    }
 }
