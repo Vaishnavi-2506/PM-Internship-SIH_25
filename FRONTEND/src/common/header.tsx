@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./Header.css";
+import "./header.css";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { Link } from "react-router-dom";
 
@@ -36,15 +36,9 @@ const HeaderBar = () => {
         </nav>
 
         <div>
-          <a className="search" href="search">
-            <FontAwesomeIcon icon={faMagnifyingGlass} />
-          </a>
-          <a className="cart" href="cart">
-            <FontAwesomeIcon icon={faBagShopping} />
-          </a>
-          <a className="person" href="person">
-            <FontAwesomeIcon icon={faUser} />
-          </a>
+          <a className="search" href="search"></a>
+          <a className="cart" href="cart"></a>
+          <a className="person" href="person"></a>
         </div>
       </div>
     </header>
