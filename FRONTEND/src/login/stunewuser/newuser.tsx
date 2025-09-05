@@ -169,7 +169,7 @@ const NewUser: React.FC = () => {
     else alert("Incorrect OTP.");
   };
 
-  const onSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
+  const onSubmit: React.FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
     const errs = validate(form);
     setTouched(
@@ -184,13 +184,55 @@ const NewUser: React.FC = () => {
       return;
     }
     setSubmitting(true);
-    setTimeout(() => {
-      alert("Form submitted successfully (demo). Check console for payload.");
-      console.log("New User payload:", form);
-      setSubmitting(false);
-    }, 600);
+    
+    const fd = new window.FormData();
+    fd.append("name", form.name);
+    fd.append("aadhar", form.aadhar);
+    fd.append("phone", form.phone);
+    fd.append("email", form.email || "");
+    fd.append("username", form.username || "");
+    fd.append("password", form.password || "");
+    fd.append("fatherName", form.fatherName || "");
+    fd.append("fatherOcc", form.fatherOcc || "");
+    fd.append("motherName", form.motherName || "");
+    fd.append("motherOcc", form.motherOcc || "");
+    fd.append("annualIncome", form.annualIncome || "");
+    fd.append("state", form.address.state || "");
+    fd.append("district", form.address.district || "");
+    fd.append("city", form.address.city || "");
+    fd.append("pincode", form.address.pincode || "");
+    fd.append("addressLine", form.address.addressLine || "");
+    if (form.aadharCard) fd.append("aadharCard", form.aadharCard);
+
+    try {
+      const res = await fetch("http://localhost:5000/register/user", {
+        method: "POST",
+        body: fd,
+      });
+      const data = await res.json();
+      if (res.ok) {
+        alert(data.message || "Registration successful!");
+        setForm(initialForm);
+        setTouched({});
+        } else {
+          alert(data.error || "Registration failed.");
+        }
+    } catch (err) {
+      alert("Network error. Please try again.");
+    }
+    setSubmitting(false);
   };
 
+    
+    
+
+
+    // setTimeout(() => {
+      // alert("Form submitted successfully (demo). Check console for payload.");
+      // console.log("New User payload:", form);
+      // setSubmitting(false);
+    // }, 600);
+  
   return (
     <div className="nu-wrapper">
       <header className="nu-header">

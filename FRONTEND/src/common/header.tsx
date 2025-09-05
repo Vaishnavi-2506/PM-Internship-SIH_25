@@ -1,6 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./header.css";
+
+import "./header.css"; // make sure filename matches exactly
+
 import { faUser } from "@fortawesome/free-regular-svg-icons";
+import { faMagnifyingGlass, faBagShopping } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 const HeaderBar = () => {
