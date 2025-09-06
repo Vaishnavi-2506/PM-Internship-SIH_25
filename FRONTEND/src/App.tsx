@@ -1,16 +1,17 @@
 import React from "react";
 import "./App.css";
-// import HeaderBar from "./common/header";
 import MainRouter from "./router";
-import Login from "./login/already/login";
+import HeaderBar from "./common/header";
 import Footer from "./common/footer";
+import Jobcard from "./common/jobcard/jobcard";
+import SearchPage from "./screen/search/search";
 
 function App() {
   return (
     <div>
-      {/* <HeaderBar /> */}
+      <HeaderBar />
       <MainRouter />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

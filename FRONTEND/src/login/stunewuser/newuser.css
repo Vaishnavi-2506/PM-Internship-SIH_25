@@ -1,212 +1,198 @@
 :root {
-    --saffron: #ff9933;
-    /* Top - Saffron */
+    --saffron: #FF9933;
     --white: #ffffff;
-    /* Middle - White */
     --green: #138808;
-    /* Bottom - Green */
     --blue: #000080;
-    /* Chakra Blue */
-    --bg-light: #f4f6fa;
-    /* Light form background */
-    --danger: #ff4d4d;
-    /* Error red */
-    --muted: #777777;
-    --shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-}
-
-/* RESET */
-* {
-    box-sizing: border-box;
+    --text-dark: #222;
+    --text-light: #f1f1f1;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 body {
     margin: 0;
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: linear-gradient(to bottom,
-            var(--saffron) 0%,
-            var(--white) 50%,
-            var(--green) 100%);
-    min-height: 100vh;
-    color: #333;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(180deg, var(--saffron), var(--white) 33%, var(--white) 66%, var(--green));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-/* WRAPPER */
 .nu-wrapper {
     min-height: 100vh;
-    padding: 24px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* HEADER */
 .nu-header {
+    background-color: var(--white);
+    width: 100%;
+    padding: 20px;
     text-align: center;
-    margin-bottom: 20px;
+    border-bottom: 4px solid var(--blue);
+    box-shadow: var(--shadow);
 }
 
 .nu-header h1 {
+    margin: 0;
     font-size: 28px;
-    font-weight: 700;
     color: var(--blue);
+    font-weight: 700;
 }
 
 .nu-lang {
     font-size: 14px;
-    color: var(--muted);
+    color: var(--text-dark);
+    margin-top: 6px;
 }
 
-/* FORM */
-.nu-form {
-    background: var(--bg-light);
-    border-radius: 14px;
-    padding: 24px;
-    box-shadow: var(--shadow);
-    max-width: 900px;
+.nu-content {
+    display: flex;
+    gap: 24px;
     width: 100%;
+    max-width: 1200px;
+    padding: 24px;
 }
 
-/* SECTION TITLES */
+.nu-sidebar {
+    flex: 1;
+    max-width: 280px;
+    background-color: var(--white);
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    font-size: 14px;
+    color: var(--text-dark);
+    border-left: 4px solid var(--saffron);
+}
+
+.nu-sidebar h3 {
+    margin: 16px 0 8px;
+    font-size: 16px;
+    color: var(--green);
+}
+
+.nu-sidebar ul,
+.nu-sidebar ol {
+    padding-left: 18px;
+}
+
+.nu-form {
+    flex: 3;
+    background-color: var(--white);
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
 .nu-section-title {
-    margin: 20px 0 12px;
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--saffron);
-    border-left: 4px solid var(--green);
-    padding-left: 8px;
+    font-size: 20px;
+    color: var(--blue);
+    border-left: 5px solid var(--green);
+    padding-left: 10px;
+    margin-top: 24px;
+    margin-bottom: 16px;
 }
 
-/* GRID */
 .nu-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: 16px;
 }
 
-@media (max-width: 960px) {
-    .nu-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 560px) {
-    .nu-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-.nu-col.span-1 {
-    grid-column: span 1;
+.nu-col {
+    flex: 1 1 200px;
 }
 
 .nu-col.span-2 {
-    grid-column: span 2;
+    flex: 1 1 100%;
 }
 
-.nu-col.span-3 {
-    grid-column: span 3;
-}
-
-.nu-col.span-4 {
-    grid-column: span 4;
-}
-
-/* FIELD */
 .nu-field {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    margin-bottom: 12px;
 }
 
 .nu-label {
-    font-size: 13px;
     font-weight: 600;
-    color: var(--blue);
+    color: var(--text-dark);
+    margin-bottom: 4px;
 }
 
 .nu-required {
-    color: var(--danger);
+    color: red;
     margin-left: 4px;
 }
 
 .nu-field input,
-.nu-field textarea,
-.nu-field select {
-    width: 100%;
-    padding: 10px 12px;
+.nu-field select,
+.nu-field textarea {
+    padding: 10px;
     border-radius: 6px;
     border: 1px solid #ccc;
-    outline: none;
     font-size: 14px;
-    background: #fff;
-    transition: border-color 0.2s ease;
 }
 
-.nu-field input:focus,
-.nu-field textarea:focus,
-.nu-field select:focus {
-    border-color: var(--green);
-    box-shadow: 0 0 0 2px rgba(19, 136, 8, 0.2);
+.nu-field-note {
+    font-size: 12px;
+    color: #666;
+    margin-top: 4px;
 }
 
 .nu-error {
-    font-size: 12px;
-    color: var(--danger);
+    color: crimson;
+    font-size: 13px;
+    margin-top: 4px;
 }
 
-/* INLINE FIELD */
-.nu-inline {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-/* BUTTONS */
+button,
 .nu-btn {
+    background-color: var(--blue);
+    color: white;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 14px;
     border: none;
     border-radius: 6px;
-    padding: 10px 16px;
-    font-weight: 600;
     cursor: pointer;
-    transition: background 0.2s ease, transform 0.15s ease;
+    margin-top: 12px;
+    transition: background 0.3s ease;
 }
 
-.nu-btn.primary {
-    background: var(--green);
-    color: var(--white);
+button:hover,
+.nu-btn:hover {
+    background-color: #002060;
 }
 
-.nu-btn.primary:hover {
-    background: #0f6d06;
-    transform: translateY(-1px);
+@media (max-width: 768px) {
+    .nu-content {
+        flex-direction: column;
+        padding: 16px;
+    }
+
+    .nu-sidebar {
+        max-width: 100%;
+    }
+
+    .nu-form {
+        padding: 16px;
+    }
 }
 
-.nu-btn.secondary {
-    background: var(--saffron);
-    color: var(--white);
-}
-
-.nu-btn.secondary:hover {
-    background: #e67e22;
-    transform: translateY(-1px);
-}
-
-.nu-btn.ghost {
-    background: transparent;
-    border: 1px solid var(--blue);
-    color: var(--blue);
-}
-
-.nu-btn.ghost:hover {
-    background: var(--blue);
-    color: var(--white);
-}
-
-/* ACTIONS */
 .nu-actions {
     display: flex;
-    justify-content: flex-end;
-    gap: 12px;
-    margin-top: 20px;
+    gap: 16px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+
+.nu-actions button {
+    flex: 1 1 120px;
+    min-width: 120px;
+}
+
+@media (max-width: 480px) {
+    .nu-actions {
+        flex-direction: column;
+    }
 }
